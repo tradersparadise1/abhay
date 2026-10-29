@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traders Paradise | Trading Education Community</title>
+  <meta name="description" content="Join Traders Paradise, a Telegram community for market insights, trading education and discussions.">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #08041a;
+      --purple: #754bff;
+      --gold: #e5b85f;
+      --text: #ffffff;
+      --muted: #bcb7d1;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 95% 25%, #4422ad88, transparent 35%),
+        radial-gradient(ellipse at 0% 60%, #193cba66, transparent 40%),
+        #08041a;
+    }
+
+    header {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--gold);
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .top-btn {
+      text-decoration: none;
+      color: white;
+      border: 1px solid #957aff;
+      padding: 10px 16px;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .hero {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      padding: 65px 20px 75px;
+    }
+
+    .profile {
+      width: 165px;
+      height: 165px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      padding: 5px;
+      margin: 0 auto 28px;
+      background: #100b23;
+      box-shadow: 0 0 55px #7c43ff55;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #b6a4ff, #7255ff, #d9a9ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .description {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .cta {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(110deg, #6540ec, #4434c5);
+      padding: 17px 35px;
+      border-radius: 40px;
+      font-size: 17px;
+      font-weight: 800;
+      box-shadow: 0 10px 40px #6042ff66;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 45px #795cff99;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #bdb5d5;
+      margin-top: 15px;
+    }
+
+    .features {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 20px 85px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(26px, 4vw, 38px);
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 30px 24px;
+      background: linear-gradient(145deg, #211447, #100b26);
+      border: 1px solid #64509a66;
+      border-radius: 20px;
+    }
+
+    .card .symbol {
+      font-size: 31px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: white;
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .bottom {
+      max-width: 900px;
+      margin: 0 auto 70px;
+      padding: 45px 25px;
+      text-align: center;
+      background: linear-gradient(125deg, #25115c, #111033);
+      border: 1px solid #7856d766;
+      border-radius: 26px;
+    }
+
+    .bottom h2 {
+      font-size: clamp(25px, 4vw, 36px);
+      margin-bottom: 15px;
+    }
+
+    .bottom p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    footer {
+      border-top: 1px solid #ffffff1c;
+      padding: 28px 20px;
+      text-align: center;
+      color: #aaa3c0;
+      font-size: 12px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    footer p { margin: 7px 0; }
+
+    @media (max-width: 650px) {
+      .hero { padding-top: 40px; }
+      .profile { width: 135px; height: 135px; }
+      .cards { grid-template-columns: 1fr; }
+      .cta { width: 100%; max-width: 350px; }
+      .brand { font-size: 15px; }
+      .top-btn { font-size: 11px; padding: 9px 12px; }
+      .bottom { margin-left: 18px; margin-right: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <header>
+    <div class="brand">
+      <img src="https://i.ibb.co/qLx6jDSh/images.jpg" alt="Traders Paradise Logo">
+      <span>TRADERS PARADISE</span>
+    </div>
+    <a class="top-btn"
+       href="https://t.me/+M507-vuhUxc4Yzk1">
+      Join Telegram
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="profile">
+        <img src="https://i.ibb.co/qLx6jDSh/images.jpg"
+             alt="Traders Paradise Community">
+      </div>
+
+      <div class="eyebrow">
+        Welcome to Traders Paradise
+      </div>
+
+      <h1>
+        Trade Smarter.<br>
+        Learn Better.<br>
+        <span>Grow Your Knowledge.</span>
+      </h1>
+
+      <p class="description">
+        Join Traders Paradise, a community for
+        market enthusiasts. Explore market insights,
+        trading education, and meaningful discussions
+        with fellow traders.
+      </p>
+
+      <a class="cta"
+         href="https://t.me/+M507-vuhUxc4Yzk1">
+         Join Free Telegram 
+      </a>
+
+      <p class="note">
+        Free to Join • Market Education • Community Discussions
+      </p>
+    </section>
+
+    <section class="features">
+      <div class="eyebrow" style="text-align:center">
+        WHY TRADERS PARADISE
+      </div>
+
+      <h2 class="section-title">
+        Built for Market Enthusiasts
+      </h2>
+
+      <div class="cards">
+        <div class="card">
+          <div class="symbol">📊</div>
+          <h3>Market Insights</h3>
+          <p>
+            Explore market trends, technical concepts
+            and educational market observations.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">📚</div>
+          <h3>Trading Education</h3>
+          <p>
+            Learn about trading strategies,
+            risk management and market fundamentals.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">🤝</div>
+          <h3>Trading Community</h3>
+          <p>
+            Connect with like-minded traders
+            and participate in market discussions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom">
+      <h2>Ready to Join Traders Paradise?</h2>
+      <p>
+        Become part of our Telegram community
+        and continue your trading learning journey.
+      </p>
+
+      <a class="cta"
+         href="https://t.me/+M507-vuhUxc4Yzk1">
+         Join Our Free Telegram
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Traders Paradise. All Rights Reserved.</p>
+    <p>
+      Disclaimer: Trading and investing involve financial
+      risk, including possible loss of capital.
+      Content is for educational and informational
+      purposes only and is not financial advice.
+      No profits or returns are guaranteed.
+    </p>
+    <p>
+      Traders Paradise is an independent community
+      and is not affiliated with Telegram or Meta.
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
